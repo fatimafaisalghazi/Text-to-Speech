@@ -46,29 +46,29 @@ public class TextToSpeech {
 
     public static void speak(String text, int speed) {
         if (text == null || text.trim().isEmpty()) {
-            System.err.println(Messages.get("empty_text"));
+            System.err.println(MessagesLocalization.get("empty_text"));
             return;
         }
 
         try (InputStream audioStream = getAudioStream(text, speed)) {
-            System.out.println(Messages.get("playing") + text);
+            System.out.println(MessagesLocalization.get("playing") + text);
 
             Player player = new Player(audioStream);
             player.play();
 
-            System.out.println(Messages.get("finished"));
+            System.out.println(MessagesLocalization.get("finished"));
 
         } catch (NetworkException e) {
             System.err.println("❌ " + e.getMessage());
 
         } catch (UnknownHostException e) {
-            System.err.println("❌ " + Messages.get("error_no_internet"));
+            System.err.println("❌ " + MessagesLocalization.get("error_no_internet"));
 
         } catch (IOException e) {
-            System.err.println("❌ " + Messages.get("error_connection") + ": " + e.getMessage());
+            System.err.println("❌ " + MessagesLocalization.get("error_connection") + ": " + e.getMessage());
 
         } catch (Exception e) {
-            System.err.println("❌ " + Messages.get("error_playing") + e.getMessage());
+            System.err.println("❌ " + MessagesLocalization.get("error_playing") + e.getMessage());
 
         }
     }

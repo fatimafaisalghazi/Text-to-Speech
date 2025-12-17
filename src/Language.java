@@ -5,7 +5,7 @@ public class Language {
     private static String lang;
 
     public static void setLang(String chose) throws InputException {
-        Messages.setLanguage(chose);
+        MessagesLocalization.setLanguage(chose);
 
         if (chose.equals("1")) {
             lang = "ARABIC";

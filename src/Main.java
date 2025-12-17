@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -15,7 +14,7 @@ public class Main {
             String language = input.nextLine().trim();
             Language.setLang(language);
 
-            System.out.println(Messages.get("enter_sentence"));
+            System.out.println(MessagesLocalization.get("enter_sentence"));
             String text = input.nextLine().trim();
 
             TextToSpeech.speak(text, 0);

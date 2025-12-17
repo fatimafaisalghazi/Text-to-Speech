@@ -1,4 +1,4 @@
-public class Messages {
+public class MessagesLocalization {
 
     private static String currentLang = "2";
 
