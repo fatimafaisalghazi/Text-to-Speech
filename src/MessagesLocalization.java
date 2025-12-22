@@ -41,6 +41,10 @@ public class MessagesLocalization {
                 return "إدخال خاطئ! الرجاء إدخال 1 أو 2";
             case "empty_text":
                 return "❌ النص فارغ!";
+            case "speed":
+                return "أدخل سرعة الصوت (-10 إلى 10): ";
+            case "control_speed":
+                return "ادخل 0 اذا كنت تريد لتحكم بالسرعة ";
             default:
                 return key;
         }
@@ -68,6 +72,10 @@ public class MessagesLocalization {
                 return "Incorrect input! Please enter 1 or 2";
             case "empty_text":
                 return "❌ Text is empty!";
+            case "speed":
+                return "enter speed (-10 to 10):  ";
+            case "control_speed":
+                return "enter 0 if u want to control speed ";
             default:
                 return key;
         }

@@ -18,7 +18,7 @@ public class TextToSpeech {
 
     private static String buildUrl(String text, int speed) {
         speed = Math.max(-10, Math.min(10, speed));
-        String voiceName = Language.ChoseLang();
+        String voiceName = VoiceLanguage.getVoiceLang();
         return String.format(API_URL, voiceName, speed, encodeToBase64(text));
     }
 
@@ -27,15 +27,6 @@ public class TextToSpeech {
         String url = buildUrl(text, speed);
         HttpURLConnection conn = URLConnection.openAudioConnection(url);
 
-/**
- * Validates the HTTP response code.
- * <p>
- * The response code 200 indicates a successful HTTP request.
- * Any other response code will result in a NetworkException.
- *
- * @param responseCode the HTTP response code to validate
- * @throws NetworkException if responseCode is not 200
- */
         int responseCode = conn.getResponseCode();
         if (responseCode != 200) {
             throw new NetworkException("Response code: " + responseCode);

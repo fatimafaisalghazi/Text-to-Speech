@@ -1,7 +1,7 @@
-public class Language {
+public class VoiceLanguage {
 
-    static final String ARABIC_VOICE = "Mehdi22k";
-    static final String ENGLISH_VOICE = "Heather22k";
+    private static final String ARABIC_VOICE = "Mehdi22k";
+    private static final String ENGLISH_VOICE = "Heather22k";
     private static String lang;
 
     public static void setLang(String chose) throws InputException {
@@ -14,13 +14,8 @@ public class Language {
         }
     }
 
-    public static String getLang() {
-        return lang;
-    }
-
-    public static String ChoseLang() {
+    public static String getVoiceLang() {
         if ("ARABIC".equals(lang)) return ARABIC_VOICE;
         return ENGLISH_VOICE;
     }
-
 }
